@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    @apply bg-black text-white overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 30px rgb(192 132 252),
+                 0 0 60px rgb(192 132 252),
+                 0 0 80px rgb(192 132 252);
+  }
+  
+  .glow {
+    box-shadow: 0 0 30px rgb(139 92 246 / 0.5),
+                0 0 60px rgb(139 92 246 / 0.3),
+                0 0 80px rgb(139 92 246 / 0.1);
+  }
+}
