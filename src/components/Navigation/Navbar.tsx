@@ -7,22 +7,45 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
+    let ticking = false
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-      
-      const sections = ['about', 'experience', 'skills', 'projects', 'contact']
-      const current = sections.find(section => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
-        }
-        return false
-      })
-      setActiveSection(current || '')
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20)
+          
+          const sections = ['about', 'experience', 'skills', 'contact']
+          const scrollPosition = window.scrollY + 100
+          
+          let current = ''
+          let minDistance = Infinity
+          
+          sections.forEach(section => {
+            const element = document.getElementById(section)
+            if (element) {
+              const rect = element.getBoundingClientRect()
+              const elementTop = window.scrollY + rect.top
+              const elementBottom = elementTop + rect.height
+              
+              // Проверяем, находится ли секция в видимой области
+              if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+                const distance = Math.abs(scrollPosition - elementTop)
+                if (distance < minDistance) {
+                  minDistance = distance
+                  current = section
+                }
+              }
+            }
+          })
+          
+          setActiveSection(current)
+          ticking = false
+        })
+        ticking = true
+      }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -30,12 +53,19 @@ export default function Navbar() {
     { id: 'about', label: 'Обо мне' },
     { id: 'experience', label: 'Опыт' },
     { id: 'skills', label: 'Навыки' },
-    { id: 'projects', label: 'Проекты' },
     { id: 'contact', label: 'Контакты' }
   ]
 
   const handleNavClick = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    const element = document.getElementById(id)
+    if (element) {
+      const offset = 80 // Отступ для фиксированной навигации
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth'
+      })
+    }
     setMobileMenuOpen(false)
   }
 

@@ -55,7 +55,7 @@ export default function ValueProposition() {
               </span>
               <br className="sm:hidden" />
               <span className="hidden sm:inline"> </span>
-              совершенство
+              экспертиза
             </h2>
             
             <h2 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-black text-white leading-tight">

@@ -24,7 +24,8 @@ export default function MatrixBackground() {
       canvas.style.height = `${rect.height}px`
     }
 
-    const chars = "010110100101010010101"
+    // Матричные символы
+    const chars = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     const charArray = chars.split('')
     
     const getFontSize = () => window.innerWidth < 768 ? 12 : 16
@@ -32,7 +33,8 @@ export default function MatrixBackground() {
     let columns = 0
     const drops: number[] = []
 
-    const colors = ['#60a5fa', '#8b5cf6', '#10b981']
+    // Фиолетовая палитра как в матрице
+    const colors = ['#c084fc', '#a855f7', '#9333ea', '#7c3aed', '#6d28d9']
 
     const initDrops = () => {
       drops.length = 0
@@ -40,7 +42,7 @@ export default function MatrixBackground() {
       columns = Math.floor(canvasWidth / fontSize)
       
       for (let i = 0; i < columns; i++) {
-        drops[i] = Math.random() * -100
+        drops[i] = Math.floor(Math.random() * -100)
       }
     }
 
@@ -48,10 +50,8 @@ export default function MatrixBackground() {
       const canvasWidth = canvas.getBoundingClientRect().width
       const canvasHeight = canvas.getBoundingClientRect().height
       
-      ctx.setTransform(1, 0, 0, 1, 0, 0)
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
+      // Полупрозрачный черный фон для эффекта шлейфа
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.04)'
       ctx.fillRect(0, 0, canvasWidth, canvasHeight)
 
       ctx.font = `bold ${fontSize}px monospace`
@@ -59,20 +59,26 @@ export default function MatrixBackground() {
 
       for (let i = 0; i < drops.length; i++) {
         const char = charArray[Math.floor(Math.random() * charArray.length)]
-        const color = colors[Math.floor(Math.random() * colors.length)]
-        ctx.fillStyle = color
+        
+        // Градиент цвета - первый символ в колонке ярче
+        const colorIndex = Math.min(Math.floor(drops[i] / 10), colors.length - 1)
+        ctx.fillStyle = colors[colorIndex]
 
         const x = i * fontSize + fontSize / 2
         const y = drops[i] * fontSize
         
-        if (y <= canvasHeight + fontSize) {
+        // Рисуем только если символ в пределах видимой области
+        if (y > 0 && y <= canvasHeight + fontSize) {
           ctx.fillText(char, x, y)
         }
 
+        // Случайно сбрасываем каплю когда она выходит за нижнюю границу
         if (y > canvasHeight && Math.random() > 0.975) {
           drops[i] = 0
         }
-        drops[i]++
+        
+        // Увеличиваем скорость для более динамичного эффекта
+        drops[i] += 1
       }
 
       animationId = requestAnimationFrame(draw)
@@ -101,7 +107,7 @@ export default function MatrixBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 w-full h-full pointer-events-none z-0"
-      style={{ opacity: 0.3 }}
+      style={{ opacity: 0.7 }}
     />
   )
 }

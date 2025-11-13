@@ -40,12 +40,6 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
           <button 
-            onClick={() => scrollToSection('projects')}
-            className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl text-sm sm:text-base"
-          >
-            Смотреть проекты
-          </button>
-          <button 
             onClick={() => scrollToSection('contact')}
             className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
           >
