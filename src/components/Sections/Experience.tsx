@@ -6,14 +6,12 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden">
-      {/* Фоновые элементы */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-4 sm:right-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-4 sm:left-10 w-56 h-56 sm:w-96 sm:h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto max-w-4xl lg:max-w-6xl relative z-10">
-        {/* Заголовок */}
         <div className="text-center mb-16 sm:mb-20 lg:mb-28">
           <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-gray-900/80 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700/50 mb-6 sm:mb-8">
             <div className="flex gap-1">
@@ -37,28 +35,20 @@ export default function Experience() {
           </p>
         </div>
 
-        {/* Таймлайн */}
         <div className="relative">
-          {/* Центральная линия таймлайна - только на десктопе */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 transform -translate-x-1/2"></div>
-          
           <div className="space-y-8 lg:space-y-12">
             {experience.items.map((exp, index) => (
               <div key={index} className={`group relative ${index % 2 === 0 ? 'lg:pr-1/2 lg:pl-4' : 'lg:pl-1/2 lg:pr-4'}`}>
-                {/* Точка на таймлайне */}
-                <div className="hidden lg:block absolute top-6 left-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-black transform -translate-x-1/2 z-20 shadow-lg shadow-purple-500/30"></div>
-                
-                <div className="relative">
-                  {/* Карточка */}
-                  <div className="bg-gradient-to-br from-gray-900/90 to-gray-900/80 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-700/30 group-hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm lg:backdrop-blur-xl group-hover:shadow-xl group-hover:shadow-purple-500/10 relative overflow-hidden">
-                    
-                    {/* Анимированный фон */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/3 via-purple-500/2 to-pink-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
-                    {/* Декоративные элементы */}
-                    <div className="absolute top-0 right-0 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-bl from-gray-800/10 to-transparent rounded-full"></div>
+                <div className="absolute top-6 left-4 lg:left-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-black transform lg:-translate-x-1/2 z-20 shadow-lg shadow-purple-500/30"></div>
+                {index < experience.items.length - 1 && (
+                  <div className="lg:hidden absolute top-10 left-6 w-0.5 h-full bg-gradient-to-b from-purple-500 to-blue-500 -translate-x-1/2"></div>
+                )}
 
-                    {/* Заголовок и период */}
+                <div className="relative ml-10 lg:ml-0">
+                  <div className="bg-gradient-to-br from-gray-900/90 to-gray-900/80 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-700/30 group-hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm lg:backdrop-blur-xl group-hover:shadow-xl group-hover:shadow-purple-500/10 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/3 via-purple-500/2 to-pink-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute top-0 right-0 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-bl from-gray-800/10 to-transparent rounded-full"></div>
                     <div className="relative z-10">
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 sm:mb-6 gap-4">
                         <div className="flex-1">
@@ -78,7 +68,6 @@ export default function Experience() {
                           </div>
                         </div>
                         
-                        {/* Технологии */}
                         <div className="flex flex-wrap gap-2">
                           {exp.tech.map((tech, i) => (
                             <span 
@@ -94,7 +83,6 @@ export default function Experience() {
                         </div>
                       </div>
 
-                      {/* Достижения */}
                       <div className="space-y-4 sm:space-y-6">
                         <div className="flex items-center gap-2 sm:gap-3 text-white font-semibold text-base sm:text-lg">
                           <Target className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
@@ -117,18 +105,12 @@ export default function Experience() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Соединительная линия для мобильных */}
-                  {index < experience.items.length - 1 && (
-                    <div className="lg:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-4 w-0.5 h-6 bg-gradient-to-b from-purple-500 to-blue-500"></div>
-                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Футер с статистикой */}
         <div className="mt-16 sm:mt-20 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {[
             { number: '8+', label: 'Лет опыта', icon: Award, gradient: 'from-blue-500 to-cyan-500' },
