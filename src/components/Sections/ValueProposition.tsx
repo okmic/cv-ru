@@ -26,16 +26,15 @@ export default function ValueProposition() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400">
                 {about.title1}
               </span>
-              <br className="sm:hidden" />
-              <span className="hidden sm:inline">{about.subTitle1}</span>
+              <span className="inline">{about.subTitle1}</span>
             </h2>
             <h2 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-black text-white leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
                 {about.subSubTitle1}
               </span>
-              <br className="sm:hidden" />
-              <span className="hidden sm:inline"> </span>
+              <span className="inline"> 
               {about.subSubSubTitle1}
+              </span>
             </h2>
           </div>
           <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl sm:max-w-4xl mx-auto leading-relaxed font-light mt-6 sm:mt-8 px-2">
