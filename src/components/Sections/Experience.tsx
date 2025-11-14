@@ -23,11 +23,11 @@ export default function Experience() {
             </span>
           </div>
           
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 block">
+          <h2 className="uppercase text-2xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 ">
               {experience.selectionTitle1}
             </span>
-            <span className="text-white block mt-2 sm:mt-3">{experience.selectionSubTitle1}</span>
+            <span className="text-white  mt-2 sm:mt-3">{experience.selectionSubTitle1}</span>
           </h2>
           
           <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl sm:max-w-3xl lg:max-w-4xl mx-auto leading-relaxed font-light px-2">
