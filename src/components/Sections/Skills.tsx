@@ -39,8 +39,7 @@ export default function Skills() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
               {skills.title1.split(' ')[0]}
             </span>
-            {' '}
-            <span className="text-white">{skills.title.split(' ')[1]}</span>
+            <span className="text-white">{skills.title1.split(' ')[1]}</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
             {skills.subtitle1}
