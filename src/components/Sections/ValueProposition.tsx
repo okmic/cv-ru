@@ -1,108 +1,77 @@
-import { Shield, Zap, Users } from 'lucide-react'
-
+import { siteData } from '../../data'
 export default function ValueProposition() {
-  const values = [
-    {
-      title: "Надежность",
-      description: "Системы с 99.9% uptime и автоматическим восстановлением. Реализую отказоустойчивые решения с продуманной архитектурой и круглосуточным мониторингом. Ваши приложения будут работать стабильно даже при пиковых нагрузках.",
-      metric: "99.9% UPTIME",
-      gradient: "from-emerald-500 to-cyan-500",
-      icon: Shield,
-      features: ["Автоматическое восстановление", "Круглосуточный мониторинг", "Отказоустойчивая архитектура"]
-    },
-    {
-      title: "Скорость", 
-      description: "Оптимизированные решения с временем отклика менее 100ms. Использую современные технологии и лучшие практики для максимальной производительности. Быстрая загрузка и отзывчивый интерфейс — ключ к успеху вашего продукта.",
-      metric: "<100MS RESPONSE",
-      gradient: "from-purple-500 to-pink-500",
-      icon: Zap,
-      features: ["Оптимизированная загрузка", "Современные технологии", "Лучшие практики"]
-    },
-    {
-      title: "Командная интеграция",
-      description: "Я подружусь с вашей командой. Быстро вливаюсь в рабочие процессы, уважаю существующие практики и вношу свой вклад в общую динамику. Создаю позитивную среду для продуктивной collaboration и эффективного взаимодействия.", 
-      metric: "TEAM PLAYER",
-      gradient: "from-blue-500 to-indigo-500",
-      icon: Users,
-      features: ["Быстрая адаптация", "Уважение к процессам", "Позитивная среда"]
-    }
-  ]
-
+  const { about } = siteData
   return (
     <section id="about" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-1/4 -left-10 w-48 h-48 sm:w-72 sm:h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 -right-10 w-64 h-64 sm:w-96 sm:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-64 sm:h-64 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}}></div>
+        <div className="absolute bottom-1/4 -right-10 w-64 h-64 sm:w-96 sm:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-64 sm:h-64 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-20"></div>
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-20"></div>
-      
+
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-12 sm:mb-20 lg:mb-24">
           <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-gray-900/80 rounded-xl sm:rounded-2xl border border-gray-700/50 mb-6 sm:mb-8 backdrop-blur-xl">
             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full animate-pulse"></div>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 text-xs sm:text-sm font-mono font-bold tracking-widest">
-              ПРЕИМУЩЕСТВА
+              {about.title}
             </span>
           </div>
-          
+
           <div className="space-y-3 sm:space-y-4 lg:space-y-6">
             <h2 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-black text-white leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400">
-                Техническое
+                {about.title1}
               </span>
               <br className="sm:hidden" />
-              <span className="hidden sm:inline"> </span>
-              экспертиза
+              <span className="hidden sm:inline">{about.subTitle1}</span>
             </h2>
-            
             <h2 className="text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-black text-white leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
-                и командная
+                {about.subSubTitle1}
               </span>
               <br className="sm:hidden" />
               <span className="hidden sm:inline"> </span>
-              синергия
+              {about.subSubSubTitle1}
             </h2>
           </div>
-          
           <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl sm:max-w-4xl mx-auto leading-relaxed font-light mt-6 sm:mt-8 px-2">
-            Сочетание безупречной технической реализации с исключительными навыками командной работы — 
-            <span className="text-white font-medium"> формула успеха для амбициозных проектов</span>
+            {about.title2}
+            <span className="text-white font-medium"> {about.subTitle2}</span>
           </p>
         </div>
-        
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {values.map((value, index) => {
+          {about.items.map((value, index) => {
             const IconComponent = value.icon
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group relative"
               >
                 <div className={`absolute inset-0 bg-gradient-to-r ${value.gradient} rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl group-hover:blur-lg scale-95 group-hover:scale-100`}></div>
-                
+
                 <div className="relative bg-gradient-to-br from-gray-900/95 to-gray-900/90 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-gray-700/30 group-hover:border-transparent transition-all duration-500 backdrop-blur-xl h-full overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500`}></div>
-                  
+
                   <div className="absolute -top-16 -right-16 w-32 h-32 sm:w-40 sm:h-40 bg-gradient-to-bl from-gray-800/10 to-transparent rounded-full group-hover:scale-150 transition-transform duration-1000"></div>
                   <div className="absolute -bottom-16 -left-16 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-tr from-gray-800/5 to-transparent rounded-full group-hover:scale-150 transition-transform duration-1000"></div>
-                  
+
                   <div className="absolute top-3 sm:top-4 lg:top-6 left-3 sm:left-4 lg:left-6 opacity-60">
                     <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-700/30 leading-none group-hover:text-gray-600/40 transition-colors duration-300">
                       {String(index + 1).padStart(2, '0')}
                     </div>
                   </div>
-                  
+
                   <div className="relative z-10 h-full flex flex-col">
                     <div className="mb-4 sm:mb-6 flex-1">
                       <div className="flex items-start justify-between mb-3 sm:mb-4">
                         <div className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-r ${value.gradient} backdrop-blur-sm transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                           <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        
+
                         <div className={`inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:px-4 sm:py-2 bg-gradient-to-r ${value.gradient} rounded-xl sm:rounded-2xl backdrop-blur-sm border border-white/20`}>
                           <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
                           <span className="text-white text-xs font-mono font-bold tracking-wider whitespace-nowrap">
@@ -110,11 +79,11 @@ export default function ValueProposition() {
                           </span>
                         </div>
                       </div>
-                      
+
                       <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 lg:mb-4 leading-tight">
                         {value.title}
                       </h3>
-                      
+
                       <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                         {value.description}
                       </p>
@@ -122,7 +91,7 @@ export default function ValueProposition() {
 
                     <div className="space-y-1 sm:space-y-2">
                       {value.features.map((feature, featureIndex) => (
-                        <div 
+                        <div
                           key={featureIndex}
                           className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300"
                         >
@@ -131,7 +100,7 @@ export default function ValueProposition() {
                         </div>
                       ))}
                     </div>
-                    
+
                     <div className="absolute bottom-3 sm:bottom-4 lg:bottom-6 right-3 sm:right-4 lg:right-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
                       <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-white to-gray-300 rounded-full flex items-center justify-center shadow-lg">
                         <div className="w-2 h-2 sm:w-2 sm:h-2 lg:w-3 lg:h-3 bg-gray-900 rounded-full"></div>
@@ -144,47 +113,17 @@ export default function ValueProposition() {
           })}
         </div>
 
-        {/* Дополнительная статистика */}
         <div className="mt-12 sm:mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-          {[
-            { 
-              number: "40+", 
-              label: "Успешных проектов", 
-              suffix: "",
-              gradient: "from-purple-500 to-pink-500",
-              delay: "0s"
-            },
-            { 
-              number: "8", 
-              label: "Лет коммерческого опыта", 
-              suffix: "лет",
-              gradient: "from-blue-500 to-cyan-500",
-              delay: "0.1s"
-            },
-            { 
-              number: "100", 
-              label: "Гарантия результата", 
-              suffix: "%",
-              gradient: "from-green-500 to-emerald-500",
-              delay: "0.2s"
-            },
-            { 
-              number: "24/7", 
-              label: "Техническая поддержка", 
-              suffix: "",
-              gradient: "from-orange-500 to-red-500",
-              delay: "0.3s"
-            }
-          ].map((stat, index) => (
-            <div 
+          {about.stats.map((stat, index) => (
+            <div
               key={index}
               className="group relative text-center p-3 sm:p-4 lg:p-6 rounded-xl sm:rounded-2xl overflow-hidden transform hover:scale-105 transition-all duration-300"
-              style={{animationDelay: stat.delay }}
+              style={{ animationDelay: stat.delay }}
             >
               <div className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-              
+
               <div className="absolute inset-0 bg-gray-900/60 border border-gray-700/30 rounded-xl sm:rounded-2xl group-hover:border-gray-600/50 transition-all duration-300 backdrop-blur-sm"></div>
-              
+
               <div className="relative z-10">
                 <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black text-white mb-1 sm:mb-2">
                   {stat.number}

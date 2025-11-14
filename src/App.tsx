@@ -14,7 +14,6 @@ function App() {
       <ValueProposition />
       <Experience />
       <Skills />
-{/*       <Projects /> */}
       <Contact />
     </AppLayout>
   )

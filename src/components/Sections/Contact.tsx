@@ -9,29 +9,21 @@ export default function Contact() {
       ...contacts.items.find(item => item.platform === 'Telegram'),
       icon: MessageCircle,
       gradient: 'from-blue-500 to-cyan-500',
-      description: 'Мгновенная связь для быстрых вопросов',
-      status: 'Онлайн'
     },
     {
       ...contacts.items.find(item => item.platform === 'WhatsApp'),
       icon: Phone,
       gradient: 'from-green-500 to-emerald-500',
-      description: 'Звонки и сообщения в любое время',
-      status: 'Доступен'
     },
     {
       ...contacts.items.find(item => item.platform === 'Email'),
       icon: Mail,
       gradient: 'from-purple-500 to-pink-500',
-      description: 'Детальное обсуждение проектов',
-      status: 'Быстрый ответ'
     },
     {
       ...contacts.items.find(item => item.platform === 'GitHub'),
       icon: Github,
       gradient: 'from-gray-600 to-gray-800',
-      description: 'Исходный код и проекты',
-      status: 'Active'
     }
   ]
 
@@ -53,22 +45,21 @@ export default function Contact() {
               <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
             </div>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 text-sm font-mono font-bold tracking-widest">
-              ГОТОВ К СОТРУДНИЧЕСТВУ
+              {contacts.title1}
             </span>
           </div>
           
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 block">
-              Свяжитесь
+              {contacts.title2}
             </span>
-            <span className="text-white block">со мной</span>
+            <span className="text-white block">{contacts.title3}</span>
           </h1>
           
           <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Обсудим ваш проект и найдем лучшее решение
+              {contacts.title4}
           </p>
         </div>
-        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-16">
           {contactItems.map((contact, index) => {
             const Icon = contact.icon
@@ -123,31 +114,31 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="text-center p-6 bg-gray-900/50 rounded-2xl border border-gray-700/30 backdrop-blur-sm">
             <Clock className="w-8 h-8 text-blue-400 mx-auto mb-3" />
-            <div className="text-white font-semibold mb-2">Быстрый ответ</div>
-            <div className="text-gray-400 text-sm">В течение 15 минут</div>
+            <div className="text-white font-semibold mb-2">{contacts.footerTitle1}</div>
+            <div className="text-gray-400 text-sm">{contacts.footerSubTitle2}</div>
           </div>
           
           <div className="text-center p-6 bg-gray-900/50 rounded-2xl border border-gray-700/30 backdrop-blur-sm">
             <Shield className="w-8 h-8 text-green-400 mx-auto mb-3" />
-            <div className="text-white font-semibold mb-2">Конфиденциально</div>
-            <div className="text-gray-400 text-sm">NDA при необходимости</div>
+            <div className="text-white font-semibold mb-2">{contacts.footerSubTitle1}</div>
+            <div className="text-gray-400 text-sm">{contacts.footerSubTitle2}</div>
           </div>
           
           <div className="text-center p-6 bg-gray-900/50 rounded-2xl border border-gray-700/30 backdrop-blur-sm">
             <Users className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-            <div className="text-white font-semibold mb-2">Профессионально</div>
-            <div className="text-gray-400 text-sm">Опыт 8+ лет</div>
+            <div className="text-white font-semibold mb-2">{contacts.footerTitle3}</div>
+            <div className="text-gray-400 text-sm">{contacts.footerSubTitle3}</div>
           </div>
         </div>
 
         <div className="text-center">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900/50 rounded-2xl border border-gray-700/30 mb-6">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-white font-semibold">Готов к новым вызовам</span>
+            <span className="text-white font-semibold">{contacts.footerTitle}</span>
           </div>
           
           <p className="text-purple-300/60 font-light tracking-wide">
-            © Михаил Охтов 2025 • Fullstack Developer
+            {contacts.footer}
           </p>
         </div>
       </div>

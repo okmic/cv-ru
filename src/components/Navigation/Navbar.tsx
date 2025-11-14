@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Code2 } from 'lucide-react'
+import { siteData } from '../../data'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -49,12 +50,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { id: 'about', label: 'Обо мне' },
-    { id: 'experience', label: 'Опыт' },
-    { id: 'skills', label: 'Навыки' },
-    { id: 'contact', label: 'Контакты' }
-  ]
+  const { navItems } = siteData
 
   const handleNavClick = (id: string) => {
     const element = document.getElementById(id)

@@ -1,5 +1,5 @@
 import { siteData } from '../../data'
-import { Calendar, Building2, Rocket, Target, Star, Zap, Award } from 'lucide-react'
+import { Calendar, Building2, Rocket, Target, Star, Zap } from 'lucide-react'
 
 export default function Experience() {
   const { experience } = siteData
@@ -19,15 +19,15 @@ export default function Experience() {
               <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
             </div>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 text-xs sm:text-sm font-mono font-bold tracking-wider">
-              КАРЬЕРНЫЙ ПУТЬ
+              {experience.title}
             </span>
           </div>
           
           <h2 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 block">
-              Профессиональный
+              {experience.selectionTitle1}
             </span>
-            <span className="text-white block mt-2 sm:mt-3">Опыт</span>
+            <span className="text-white block mt-2 sm:mt-3">{experience.selectionSubTitle1}</span>
           </h2>
           
           <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl sm:max-w-3xl lg:max-w-4xl mx-auto leading-relaxed font-light px-2">
@@ -86,7 +86,7 @@ export default function Experience() {
                       <div className="space-y-4 sm:space-y-6">
                         <div className="flex items-center gap-2 sm:gap-3 text-white font-semibold text-base sm:text-lg">
                           <Target className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
-                          Ключевые достижения:
+                          {experience.selectionTitle2}
                         </div>
                         
                         <ul className="space-y-3 sm:space-y-4">
@@ -112,12 +112,7 @@ export default function Experience() {
         </div>
 
         <div className="mt-16 sm:mt-20 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {[
-            { number: '8+', label: 'Лет опыта', icon: Award, gradient: 'from-blue-500 to-cyan-500' },
-            { number: '40+', label: 'Проектов', icon: Target, gradient: 'from-purple-500 to-pink-500' },
-            { number: '100%', label: 'Результат', icon: Star, gradient: 'from-green-500 to-emerald-500' },
-            { number: '15+', label: 'Технологий', icon: Zap, gradient: 'from-orange-500 to-red-500' }
-          ].map((stat, index) => {
+          {experience.stats.map((stat, index) => {
             const Icon = stat.icon
             return (
               <div 
