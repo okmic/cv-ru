@@ -2,7 +2,7 @@ import { Award, Cloud, Code2, Container, Cpu, Database, GitBranch, Network, Sett
 
 export function getExperienceYears() {
   const currentYear = new Date().getFullYear()
-  return currentYear - 2017
+  return currentYear - 2019
 }
 export const siteData = {
   navItems: [
@@ -18,7 +18,7 @@ export const siteData = {
     description: "Превращаю сложные бизнес-задачи в элегантные технические решения. Специализация: кейсы с применением AI, высоконагруженные приложения и микросервисная архитектура.",
     stats: [
       { number: '40+', label: 'проектов' },
-      { number: '8', label: 'лет опыта' },
+      { number: `${getExperienceYears()}`, label: 'лет опыта' },
       { number: '100%', label: 'результат' }
     ]
   },
@@ -65,7 +65,7 @@ export const siteData = {
               delay: "0s"
             },
             { 
-              number: "8", 
+              number: `${getExperienceYears()}`, 
               label: "Лет коммерческого опыта", 
               suffix: "лет",
               gradient: "from-blue-500 to-cyan-500",
@@ -92,7 +92,7 @@ export const siteData = {
     selectionTitle1: "Профессиональный",
     selectionSubTitle1: "Опыт",
     selectionTitle2: "Ключевые достижения:",
-    subtitle: "8 лет delivering exceptional results across diverse industries",
+    subtitle: `${getExperienceYears()} лет delivering exceptional results across diverse industries`,
     stats: [
       { number: `${getExperienceYears()}+`, label: 'Лет опыта', icon: Award, gradient: 'from-blue-500 to-cyan-500' },
       { number: '40+', label: 'Проектов', icon: Target, gradient: 'from-purple-500 to-pink-500' },
@@ -131,6 +131,17 @@ export const siteData = {
           "Реализовал secure network infrastructure"
         ],
         tech: ["Python", "Node.js", "Linux", "SQL", "Automation"]
+      },
+      {
+        period: "2019 - 2020",
+        title: "Junior Fullstack Developer • RealEstateTech",
+        company: "Стартап в сфере недвижимости",
+        achievements: [
+          "Создание и оптимизация внутренних баз данных застройщика",
+          "Разработка системы управления объектами недвижимости",
+          "Интеграция с CRM и учетными системами"
+        ],
+        tech: ["JavaScript", "Node.js", "React", "PostgreSQL", "REST API"]
       }
     ]
   },

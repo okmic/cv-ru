@@ -1,18 +1,18 @@
 import { siteData } from '../../data'
-import { MessageCircle, Mail, Github, Phone, ExternalLink, Zap, ArrowRight, Clock, Shield, Users } from 'lucide-react'
-
+import { Mail, Github, ExternalLink, Zap, ArrowRight, Clock, Shield, Users } from 'lucide-react'
+import { FaTelegram } from "react-icons/fa"
+import { FaWhatsapp } from "react-icons/fa"
 export default function Contact() {
   const { contacts } = siteData
-
   const contactItems = [
     {
       ...contacts.items.find(item => item.platform === 'Telegram'),
-      icon: MessageCircle,
+      icon: FaTelegram,
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
       ...contacts.items.find(item => item.platform === 'WhatsApp'),
-      icon: Phone,
+      icon: FaWhatsapp,
       gradient: 'from-green-500 to-emerald-500',
     },
     {
@@ -26,17 +26,14 @@ export default function Contact() {
       gradient: 'from-gray-600 to-gray-800',
     }
   ]
-
   return (
     <section id="contact" className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-20"></div>
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-20"></div>
-        
         <div className="absolute top-20 -right-20 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 -left-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
-
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16 sm:mb-24">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900/80 backdrop-blur-xl rounded-2xl border border-gray-700/50 mb-8">
@@ -48,14 +45,12 @@ export default function Contact() {
               {contacts.title1}
             </span>
           </div>
-          
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 block">
               {contacts.title2}
             </span>
             <span className="text-white block">{contacts.title3}</span>
           </h1>
-          
           <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               {contacts.title4}
           </p>
@@ -71,7 +66,6 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="group relative bg-gradient-to-br from-gray-900/90 to-gray-900/80 rounded-3xl p-6 sm:p-8 border border-gray-700/30 hover:border-purple-500/50 transition-all duration-500 backdrop-blur-xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10"
               >
-                {/* Контент */}
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center gap-4">
@@ -88,14 +82,11 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
-                    
                     <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
                   </div>
-                  
                   <p className="text-gray-400 text-base mb-6 leading-relaxed">
                     {contact.description}
                   </p>
-
                   <div className="flex items-center justify-between p-4 bg-gray-800/30 rounded-xl border border-gray-700/30 group-hover:border-gray-600/50 transition-all duration-300">
                     <div className="flex items-center gap-3">
                       <Zap className="w-4 h-4 text-yellow-400" />
@@ -110,33 +101,28 @@ export default function Contact() {
             )
           })}
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="text-center p-6 bg-gray-900/50 rounded-2xl border border-gray-700/30 backdrop-blur-sm">
             <Clock className="w-8 h-8 text-blue-400 mx-auto mb-3" />
             <div className="text-white font-semibold mb-2">{contacts.footerTitle1}</div>
             <div className="text-gray-400 text-sm">{contacts.footerSubTitle2}</div>
           </div>
-          
           <div className="text-center p-6 bg-gray-900/50 rounded-2xl border border-gray-700/30 backdrop-blur-sm">
             <Shield className="w-8 h-8 text-green-400 mx-auto mb-3" />
             <div className="text-white font-semibold mb-2">{contacts.footerSubTitle1}</div>
             <div className="text-gray-400 text-sm">{contacts.footerSubTitle2}</div>
           </div>
-          
           <div className="text-center p-6 bg-gray-900/50 rounded-2xl border border-gray-700/30 backdrop-blur-sm">
             <Users className="w-8 h-8 text-purple-400 mx-auto mb-3" />
             <div className="text-white font-semibold mb-2">{contacts.footerTitle3}</div>
             <div className="text-gray-400 text-sm">{contacts.footerSubTitle3}</div>
           </div>
         </div>
-
         <div className="text-center">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900/50 rounded-2xl border border-gray-700/30 mb-6">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-white font-semibold">{contacts.footerTitle}</span>
           </div>
-          
           <p className="text-purple-300/60 font-light tracking-wide">
             {contacts.footer}
           </p>
