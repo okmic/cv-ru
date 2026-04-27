@@ -64,16 +64,16 @@ export default function Contact() {
                 href={contact.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative bg-gradient-to-br from-gray-900/90 to-gray-900/80 rounded-3xl p-6 sm:p-8 border border-gray-700/30 hover:border-purple-500/50 transition-all duration-500 backdrop-blur-xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10"
+                className="group relative bg-gradient-to-br from-gray-900/90 to-gray-900/80 rounded-3xl p-6 sm:p-8 border border-gray-700/30 transition-all duration-500 backdrop-blur-xl overflow-hidden"
               >
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center gap-4">
-                      <div className={`p-3 bg-gradient-to-r ${contact.gradient} rounded-2xl backdrop-blur-sm transform group-hover:scale-110 transition-all duration-300`}>
+                      <div className={`p-3 bg-gradient-to-r ${contact.gradient} rounded-2xl backdrop-blur-sm transform transition-all duration-300`}>
                         <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 transition-all duration-300">
                           {contact.platform}
                         </h3>
                         <div className="flex items-center gap-2">
@@ -82,19 +82,19 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
-                    <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
+                    <ExternalLink className="w-5 h-5 text-gray-400 transition-colors duration-300" />
                   </div>
                   <p className="text-gray-400 text-base mb-6 leading-relaxed">
                     {contact.description}
                   </p>
-                  <div className="flex items-center justify-between p-4 bg-gray-800/30 rounded-xl border border-gray-700/30 group-hover:border-gray-600/50 transition-all duration-300">
+                  <div className="flex items-center justify-between p-4 bg-gray-800/30 rounded-xl border border-gray-700/30 transition-all duration-300">
                     <div className="flex items-center gap-3">
                       <Zap className="w-4 h-4 text-yellow-400" />
                       <span className="text-gray-300 text-base font-semibold">
                         {contact.label}
                       </span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors duration-300" />
+                    <ArrowRight className="w-4 h-4 text-gray-400 transition-colors duration-300" />
                   </div>
                 </div>
               </a>

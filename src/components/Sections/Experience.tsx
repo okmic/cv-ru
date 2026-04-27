@@ -46,8 +46,7 @@ export default function Experience() {
                 )}
 
                 <div className="relative ml-10 lg:ml-0">
-                  <div className="bg-gradient-to-br from-gray-900/90 to-gray-900/80 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-700/30 group-hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm lg:backdrop-blur-xl group-hover:shadow-xl group-hover:shadow-purple-500/10 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/3 via-purple-500/2 to-pink-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="bg-gradient-to-br from-gray-900/90 to-gray-900/80 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-700/30 transition-all duration-300 backdrop-blur-sm lg:backdrop-blur-xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-bl from-gray-800/10 to-transparent rounded-full"></div>
                     <div className="relative z-10">
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 sm:mb-6 gap-4">
@@ -58,7 +57,7 @@ export default function Experience() {
                             <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 ml-1 sm:ml-2" />
                           </div>
                           
-                          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300 leading-tight">
+                          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 transition-all duration-300 leading-tight">
                             {exp.title}
                           </h3>
                           
@@ -72,7 +71,7 @@ export default function Experience() {
                           {exp.tech.map((tech, i) => (
                             <span 
                               key={i}
-                              className="px-3 py-1.5 bg-gray-800/60 rounded-xl text-gray-300 text-xs border border-gray-700/50 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-white transition-all duration-300 backdrop-blur-sm"
+                              className="px-3 py-1.5 bg-gray-800/60 rounded-xl text-gray-300 text-xs border border-gray-700/50 transition-all duration-300 backdrop-blur-sm"
                             >
                               <span className="flex items-center gap-1.5">
                                 <Zap className="w-3 h-3 text-blue-400" />
@@ -119,8 +118,7 @@ export default function Experience() {
                 key={index}
                 className="group relative text-center p-4 sm:p-6 rounded-2xl overflow-hidden backdrop-blur-sm"
               >
-                <div className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                <div className="absolute inset-0 bg-gray-900/60 border border-gray-700/30 rounded-2xl group-hover:border-gray-600/50 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-gray-900/60 border border-gray-700/30 rounded-2xl transition-all duration-300"></div>
                 
                 <div className="relative z-10">
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl sm:rounded-2xl mb-3 sm:mb-4">
