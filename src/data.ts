@@ -2,7 +2,7 @@ import { Award, Cloud, Code2, Container, Cpu, Database, GitBranch, Network, Sett
 
 export function getExperienceYears() {
   const currentYear = new Date().getFullYear()
-  return currentYear - 2019
+  return currentYear - 2022
 }
 export const siteData = {
   navItems: [
@@ -17,7 +17,7 @@ export const siteData = {
     subtitle: "Fullstack Developer",
     description: "Превращаю сложные бизнес-задачи в элегантные технические решения. Специализация: кейсы с применением AI, высоконагруженные приложения и микросервисная архитектура.",
     stats: [
-      { number: '40+', label: 'проектов' },
+      { number: '20+', label: 'проектов' },
       { number: `${getExperienceYears()}`, label: 'лет опыта' },
       { number: '100%', label: 'результат' }
     ]
