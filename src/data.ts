@@ -95,31 +95,21 @@ export const siteData = {
     subtitle: `${getExperienceYears()} лет delivering exceptional results across diverse industries`,
     stats: [
       { number: `${getExperienceYears()}+`, label: 'Лет опыта', icon: Award, gradient: 'from-blue-500 to-cyan-500' },
-      { number: '40+', label: 'Проектов', icon: Target, gradient: 'from-purple-500 to-pink-500' },
+      { number: '20+', label: 'Проектов', icon: Target, gradient: 'from-purple-500 to-pink-500' },
       { number: '100%', label: 'Результат', icon: Star, gradient: 'from-green-500 to-emerald-500' },
       { number: '15+', label: 'Технологий', icon: Zap, gradient: 'from-orange-500 to-red-500' }
     ],
     items: [
       {
-        period: "2025 - Настоящее время",
-        title: "Lead Fullstack Developer • Freelance",
+        period: "2023 - Настоящее время",
+        title: "Fullstack Developer • Freelance",
         company: "Various Clients",
         achievements: [
           "Разработал 40+ аутсорс-проектов в различных доменах",
           "Достиг 99.9% удовлетворенности клиентов с своевременной delivery",
           "Менторил 5+ junior разработчиков в advanced архитектурных patterns"
         ],
-        tech: ["Node.js", "React", "Kubernetes", "Microservices"]
-      },
-      {
-        period: "2022 - 2025",
-        title: "Fullstack Engineer • ConvertMe",
-        company: "Digital Transformation Agency",
-        achievements: [
-          "Архитектура микросервисной платформы",
-          "Снизил infrastructure costs на 40% через optimization",
-        ],
-        tech: ["TypeScript", "Fastify", "Docker", "MySql", "Redis"]
+        tech: ["Node.js", "React", "Kubernetes", "Microservices", "Grafana"]
       },
       {
         period: "2021 - 2022",
